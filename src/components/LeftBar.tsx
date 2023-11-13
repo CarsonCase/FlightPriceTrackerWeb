@@ -30,7 +30,7 @@ const LeftBar: React.FC<LeftBarProps> = ({ onSelectRoute }) => {
       <h2 className="text-lg text-black font-bold mb-4">Routes</h2>
       <ul>
         {routes.map((route: Route) => (
-          <li key={route.ID} className="cursor-pointer text-black" onClick={() => handleRouteClick(route.ID)}>
+          <li key={route.ID} className="cursor-pointer p-2 bg-gray-300 text-black" onClick={() => handleRouteClick(route.ID)}>
             {route.Departure} to {route.Arrival}
           </li>
         ))}
