@@ -1,3 +1,13 @@
+# Project
+Flight Price Tracker Web
+
+This is the web interface for my Flight Price Tracker backend project. The backend repo is hosted here on GitHub[https://github.com/CarsonCase/flightPriceTracker]
+The backend is written in GoLang, Postgres and Python, while this frontend is written with NextJS, React and TailwindCSS
+
+Again, this is a backend practice project. So check out that repo for the meat and potatoes!
+
+Image of the site(image.png)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
