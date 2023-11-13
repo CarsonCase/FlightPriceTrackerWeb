@@ -1,6 +1,6 @@
 // components/LeftBar.tsx
 import React, { useState, useEffect } from 'react';
-import Route from "../types/Route";
+import Route from "../../types/Route";
 import axios from 'axios';
 
 interface LeftBarProps {
@@ -27,10 +27,10 @@ const LeftBar: React.FC<LeftBarProps> = ({ onSelectRoute }) => {
 
   return (
     <div className="w-1/3 bg-gray-200 p-4">
-      <h2 className="text-lg font-bold mb-4">Routes</h2>
+      <h2 className="text-lg text-black font-bold mb-4">Routes</h2>
       <ul>
         {routes.map((route: Route) => (
-          <li key={route.ID} className="cursor-pointer" onClick={() => handleRouteClick(route.ID)}>
+          <li key={route.ID} className="cursor-pointer text-black" onClick={() => handleRouteClick(route.ID)}>
             {route.Departure} to {route.Arrival}
           </li>
         ))}

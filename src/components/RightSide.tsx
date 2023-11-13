@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Line } from 'react-chartjs-2';
-import { Flight } from "../types/Flight";
+import { Flight } from "../../types/Flight";
 import { CategoryScale, LinearScale, Chart } from 'chart.js';
 import { PointElement, LineElement } from "chart.js";
 

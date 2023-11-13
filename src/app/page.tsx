@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
-import LeftBar from '../../components/LeftBar';
-import RightSide from '../../components/RightSide';
+import LeftBar from '../components/LeftBar';
+import RightSide from '../components/RightSide';
 
 const Home: React.FC = () => {
   const [selectedRoute, setSelectedRoute] = useState<string | null>(null);
