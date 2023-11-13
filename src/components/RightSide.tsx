@@ -17,11 +17,10 @@ interface RightSideProps {
 
 const RightSide: React.FC<RightSideProps> = (selectedRoute) => {
   const [flightData, setFlightData] = useState<Flight[]>([]);
-  console.log("Selected route: " + selectedRoute);
   useEffect(() => {
     if (selectedRoute) {
       console.log("Selected route: " + selectedRoute);
-      axios.get<Flight[]>(`http://localhost:8000/flights?route=${selectedRoute}`)
+      axios.get<Flight[]>(`http://localhost:8000/flights`)
         .then((response) => {
           setFlightData(response.data);
         })
@@ -30,13 +29,15 @@ const RightSide: React.FC<RightSideProps> = (selectedRoute) => {
         });
     }
   }, [selectedRoute]);
+
+  const filteredFlights = flightData.filter((flight) => flight.Route === selectedRoute.selectedRoute);
   // Example chart data (modify based on your actual data structure)
   const chartData = {
-    labels: flightData.map((flight: Flight) => flight.Date).reverse(),
+    labels: filteredFlights.map((flight: Flight) => flight.Date).reverse(),
     datasets: [
       {
         label: 'Flight Prices',
-        data: flightData.map((flight: Flight) => flight.Price).reverse(),
+        data: filteredFlights.map((flight: Flight) => flight.Price).reverse(),
         fill: false,
         borderColor: 'rgba(75,192,192,1)',
       },
@@ -45,7 +46,7 @@ const RightSide: React.FC<RightSideProps> = (selectedRoute) => {
 
   return (
     <div className="w-2/3 p-4">
-      <h2 className="text-lg font-bold mb-4">Animated Graph</h2>
+      <h2 className="text-lg font-bold mb-4">Price Graph</h2>
       <div className="border border-gray-300 p-4 rounded-md">
         {selectedRoute && flightData.length > 0 ? (
           <Line data={chartData} />
