@@ -6,7 +6,7 @@ The backend is written in GoLang, Postgres and Python, while this frontend is wr
 
 Again, this is a backend practice project. So check out that repo for the meat and potatoes!
 
-Image of the site(image.png)
+![Image of the site](image.png)
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
