@@ -12,7 +12,7 @@ const LeftBar: React.FC<LeftBarProps> = ({ onSelectRoute }) => {
 
   useEffect(() => {
     // Fetch routes data
-    axios.get('http://localhost:8000/routes')
+    axios.get('http://81.4.109.207:8000/routes')
       .then((response) => {
         setRoutes(response.data);
       })

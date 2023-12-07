@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Line } from 'react-chartjs-2';
-import { Flight } from "../../types/Flight";
+import Flight from "../../types/Flight";
 import { CategoryScale, LinearScale, Chart } from 'chart.js';
 import { PointElement, LineElement } from "chart.js";
 
@@ -20,7 +20,7 @@ const RightSide: React.FC<RightSideProps> = (selectedRoute) => {
   useEffect(() => {
     if (selectedRoute) {
       console.log("Selected route: " + selectedRoute);
-      axios.get<Flight[]>(`http://localhost:8000/flights`)
+      axios.get<Flight[]>(`http://81.4.109.207:8000/flights`)
         .then((response) => {
           setFlightData(response.data);
         })
